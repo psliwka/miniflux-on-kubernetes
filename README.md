@@ -10,6 +10,7 @@ Bootstrap
 * Run `terraform init && terraform apply`
 * Init DB credentials: `kubectl create secret generic postgres --from-literal=password=$(pwgen -s 20 1)`
 * Deploy Postgres: `kubectl apply -f postgres.yaml`
+* Deploy Miniflux: `kubectl apply -f miniflux.yaml`
 
 TODOs
 -----
