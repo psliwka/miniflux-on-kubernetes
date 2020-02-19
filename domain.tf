@@ -19,3 +19,11 @@ resource "cloudflare_record" "kubesail_verification" {
   value   = "KUBESAIL_VERIFY=${var.kubesail_verification_code}"
   proxied = false
 }
+
+resource "cloudflare_record" "public_ingress" {
+  zone_id = data.cloudflare_zones.psliwka_app.zones[0].id
+  name    = "miniflux"
+  type    = "CNAME"
+  value   = "usw1.kubesail.io"
+  proxied = false
+}
