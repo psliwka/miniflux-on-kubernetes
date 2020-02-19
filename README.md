@@ -13,6 +13,15 @@ Bootstrap
 * Deploy Postgres: `kubectl apply -f postgres.yaml`
 * Deploy Miniflux: `kubectl apply -f miniflux.yaml`
 
+Decommissioning
+---------------
+
+```sh
+kubectl delete -f miniflux.yaml -f postgres.yaml
+kubectl delete secret postgres
+terraform destroy
+```
+
 TODOs
 -----
 
