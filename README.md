@@ -18,8 +18,9 @@ Restoring backup
 ----------------
 
 ```sh
-kubectl cp backup.sql postgres-xxxxxxxxxx-xxxxx:/tmp/
-kubectl exec postgres-xxxxxxxxxx-xxxxx -it -- psql -U miniflux -d miniflux2 -f /tmp/backup.sql
+POSTGRES_POD="$(kubectl get pods -l app=postgres -o name | sed 's/^pod\///')"
+kubectl cp backup.sql $POSTGRES_POD:/tmp/
+kubectl exec $POSTGRES_POD -it -- psql -U miniflux -d miniflux2 -f /tmp/backup.sql
 ```
 
 Decommissioning
