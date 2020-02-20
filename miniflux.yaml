@@ -61,3 +61,4 @@ spec:
   tls:
   - hosts:
     - "miniflux.psliwka.app"
+    secretName: miniflux-tls
