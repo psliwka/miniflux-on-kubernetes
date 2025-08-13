@@ -35,4 +35,5 @@ terraform destroy
 TODOs
 -----
 
+* **Find alternative for Kubesail, as they stopped offering hosted Kubernetes clusters**
 * Configure quotas
